@@ -16,9 +16,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -53,9 +52,10 @@ fun SortScreen(viewModel: SortViewModel, context: Context) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Gray),
+            .background(Color.Gray)
+            .padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
@@ -89,8 +89,6 @@ fun SortScreen(viewModel: SortViewModel, context: Context) {
             }
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
-
         LazyColumn(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
@@ -105,7 +103,7 @@ fun SortScreen(viewModel: SortViewModel, context: Context) {
                 }
                 Box(
                     modifier = Modifier
-                        .size(50.dp)
+                        .size(55.dp)
                         .background(color = it.color, RoundedCornerShape(12.dp))
                         .border(borderStroke, shape = RoundedCornerShape(12.dp))
                         .animateItemPlacement(
