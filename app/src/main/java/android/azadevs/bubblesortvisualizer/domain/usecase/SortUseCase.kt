@@ -21,14 +21,14 @@ class SortUseCase {
 
             while (index < listSize) {
                 emit(SortData(currentItemIndex = index, shouldSwap = false, hadNoEffect = false))
-                delay(300)
+                delay(500)
                 if (list[index] > list[index + 1]) {
                     list.swap(index, index + 1)
                     emit(SortData(currentItemIndex = index, shouldSwap = true, hadNoEffect = false))
                 } else {
                     emit(SortData(currentItemIndex = index, shouldSwap = false, hadNoEffect = true))
                 }
-                delay(300)
+                delay(500)
                 index++
             }
 
